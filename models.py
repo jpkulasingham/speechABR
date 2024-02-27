@@ -85,20 +85,18 @@ def fit_freq_trf(y, x, t1=-5, t2=5):
 
 
 def fit_trf_posneg(eeg, xp, xn, trfstr='', t1=-5, t2=5):
-    if method=='freq':
-        trfp = fit_freq_trf(eeg, xp, t1=t1, t2=t2) # positive TRF
-        trfp.name = 'pos TRF'+trfstr
-        trfn = fit_freq_trf(eeg, xn, t1=t1, t2=t2) # negative TRF
-        trfn.name = 'neg TRF'+trfstr
-        trf = 0.5*(trfp+trfn) # average TRF
-        trf.name = 'avg TRF'+trfstr
+    trfp = fit_freq_trf(eeg, xp, t1=t1, t2=t2) # positive TRF
+    trfp.name = 'pos TRF'+trfstr
+    trfn = fit_freq_trf(eeg, xn, t1=t1, t2=t2) # negative TRF
+    trfn.name = 'neg TRF'+trfstr
+    trf = 0.5*(trfp+trfn) # average TRF
+    trf.name = 'avg TRF'+trfstr
     return trf, trfp, trfn
 
 
 
 def fit_trf_posonly(eeg, xp, trfstr=''):
-    if method=='freq':
-        trf = fit_freq_trf(eeg, xp) # positive TRF
-        trf.name = 'TRF'+trfstr
+    trf = fit_freq_trf(eeg, xp) # positive TRF
+    trf.name = 'TRF'+trfstr
     return trf
 
