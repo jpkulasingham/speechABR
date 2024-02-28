@@ -94,8 +94,7 @@ def plot_avg(resdict, conditions, fig=None, labels=None, title=None, savefile=No
         chigh = ym+ys
         print(np.max(ym))
         plt.plot(resdict[k].time.times*1e3, ym, color=colors[i], alpha=0.8, lw=2)
-        if errormethod is not None:
-            plt.fill_between(resdict[k].time.times*1e3, clow, chigh, color=colors[i], alpha=0.15)
+        plt.fill_between(resdict[k].time.times*1e3, clow, chigh, color=colors[i], alpha=0.15)
         
     plt.axhline(0, color='k')
     if ylim is not None:
