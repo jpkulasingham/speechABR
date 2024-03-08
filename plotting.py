@@ -8,7 +8,7 @@ from tqdm import tqdm
 from matplotlib.lines import Line2D
 
 
-def plot_fig_AVG3(resdict, corrdict, savepath, sigbars=None):
+def plot_fig_AVG(resdict, corrdict, savepath, sigbars=None):
     colorsA =[(0.5, 0.5, 1), (1, 0.5, 0.5), (0.2, 0.2, 0.6), (0.6, 0.2, 0.2),]
     ylim = [-0.5, 0.8]
     savepath.mkdir(exist_ok=True)
@@ -33,9 +33,9 @@ def plot_fig_AVG3(resdict, corrdict, savepath, sigbars=None):
     plot_corr(plt.gca(), ['in_speech_RS', 's_speech_RS', 'in_speech_AN', 's_speech_AN'], 
                         ['RS inserts', 'RS sound-field', 'ANM inserts', 'ANM sound-field'], colors, corrdict, sigbars=sigbars)
     plt.subplots_adjust(hspace=0.3)
-    plt.ylim([-0.015,0.045])
-    plt.savefig(savepath / 'fig_AVG3.pdf', bbox_inches='tight', dpi=600)
-    plt.savefig(savepath / 'fig_AVG3.png', bbox_inches='tight', dpi=600)
+    plt.ylim([-0.015,0.055])
+    plt.savefig(savepath / 'fig_AVG.pdf', bbox_inches='tight', dpi=600)
+    plt.savefig(savepath / 'fig_AVG.png', bbox_inches='tight', dpi=600)
 
 
 def plot_fig_indivTRFs(resdict, pklatsdict, pkampsdict, savepath, saveflag=False):
@@ -132,7 +132,7 @@ def plot_corr(ax, ks, labels, colors, corrsA, sigbars=None):
             m.set_color('black')
         patches.append(mpatches.Patch(color=color, label=label))
 
-    ax.set_ylim([-0.015, 0.05])
+    ax.set_ylim([-0.015, 0.06])
     ax.set_xticks([i*2+0.25 for i in range(4)])
     ax.set_xticklabels(labels, fontsize=10)
 
@@ -147,9 +147,9 @@ def plot_corr(ax, ks, labels, colors, corrsA, sigbars=None):
 
     if sigbars is not None:
         for i, sigbar in enumerate(sigbars):
-            x1 = sigbar[0]*2+0.1
-            x2 = sigbar[1]*2+0.1
-            y1 = 0.04-0.018*(len(sigbars)-i-1)/len(sigbars)
+            x1 = sigbar[0]*2+0.005
+            x2 = sigbar[1]*2+0.005
+            y1 = 0.04-0.018*(len(sigbars)-i-1)/len(sigbars) + 0.0055
             y2 = y1 + 0.001
             xmark = 0.5*(x1+x2)
             ymark = y2 + 0.001

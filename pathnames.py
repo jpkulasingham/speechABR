@@ -1,15 +1,9 @@
 import pathlib
 
-predfolder = pathlib.Path(r'')
-in_path = pathlib.Path(r'')
-data_path = pathlib.Path(r'')
-out_path_data = pathlib.Path(r'')
-in_path_earlobes = pathlib.Path(r'') 
-iin_path_mastoids = pathlib.Path(r'') 
-out_path_clicks = pathlib.Path(r'')
-out_path = pathlib.Path(r'')
-out_path_post = pathlib.Path(r'')
-click_path = pathlib.Path(r'')
-speech_path_in = pathlib.Path(r'')
-speech_path_s = pathlib.Path(r'')
+predictor_folder = pathlib.Path(r'E:\LiU\Projects\Interspeech_2023\predictors')
+rawdata_path = pathlib.Path(r'E:\LiU\Projects\SpeechABR\data')
+preprocessed_path = pathlib.Path(r'E:\LiU\Projects\FreefieldABR\SFABR_rev1.0\preprocessed_data')
+clicks_path = pathlib.Path(r'E:\LiU\Projects\FreefieldABR\SFABR_rev1.0\results_clicks\clicks_006')
+speech_path = pathlib.Path(r'E:\LiU\Projects\FreefieldABR\SFABR_rev1.0\results\rev1_006_final_FIR1Hz')
+postanalysis_path = pathlib.Path(r'E:\LiU\Projects\FreefieldABR\SFABR_rev1.0\post_analysis_006')
 
